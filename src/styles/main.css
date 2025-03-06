@@ -1,0 +1,65 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --secondary: #10b981;
+  --secondary-dark: #059669;
+  --background: #f9fafb;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --accent: #eff6ff;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --secondary-dark: #059669;
+  --background: #1f2937;
+  --foreground: #f9fafb;
+  --card: #374151;
+  --border: #4b5563;
+  --muted: #374151;
+  --accent: #1e40af;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-poppins;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-white rounded-md hover:bg-secondary-dark transition-colors;
+  }
+  
+  .btn-outline {
+    @apply px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary/10 transition-colors;
+  }
+  
+  .card {
+    @apply bg-card rounded-lg border border-border p-4 shadow-sm;
+  }
+  
+  .input {
+    @apply px-3 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+}
